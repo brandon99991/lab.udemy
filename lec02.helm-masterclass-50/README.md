@@ -1,5 +1,7 @@
 ● Lecture02. Helm Masterclass: 50 Practical Demos for Kubernetes DevOps
 
+https://github.com/stacksimplify/helm-masterclass
+
 ---------------------
 1. Helm 설치
 설치 안내 : https://helm.sh/docs/intro/install/
@@ -20,6 +22,39 @@ sudo apt-get install helm
 ● Helm Version 확인
 $ helm version
 
+● Helm 환경변수 확인
+$ helm env
+
+● Helm repository 목록
+$ helm repo list
+
+● Helm repository 추가
+// helm repo add <DESIRED-NAME> <HELM-REPO-URL>
+$ helm repo add mybitnami https://charts.bitnami.com/bitnami
+
+● Helm repository에서 찾기
+// helm search repo <KEY-WORD>
+$ helm search repo nginx
+$ helm search repo
+
+● Helm repository에서 keyword에 해당 하는 모든 버젼 찾기
+$ helm search repo wildfly --versions
+
+● Helm repository에서 keyword에 해당 하는 특정 버젼 찾기
+$ helm search repo wildfly --version 13.3.10
+
+
+helm repo update
+
+
+
+helm install
+
+
+helm list
+
+
+helm uninstall
 
 
 ```
