@@ -3,8 +3,7 @@
 https://github.com/stacksimplify/helm-masterclass  
 
 https://github.com/stacksimplify/helm-charts  
-
-# Helm Repository on github
+    
 https://stacksimplify.github.io/helm-charts/
 
 
@@ -85,18 +84,46 @@ $ helm search repo mychart2 --versions
 # Install myapp1 Helm Chart
 $ helm install myapp1 stacksimplify/mychart1 
 
+// chart의 values.yaml에서 image tag값이 비었을 경우에는 
+// Chart.yaml의 appVersion의 값으로 채워진다.  
+// 예) tag: ""
+// 이 예에서는 Chart.yaml에서 아래와 같이 되어 있으므로  
+// 이미지 tag는 1.0.0이 된다.
+// 예) appVersion: "1.0.0"1.0.0.
 
 # Review the Docker Image Versions we are using
 https://github.com/users/stacksimplify/packages/container/package/kubenginx
 Image Tags: 1.0.0, 2.0.0, 3.0.0, 4.0.0
 
-# Helm Upgrade
+# Helm image Upgrade
 // helm upgrade <RELEASE-NAME> <repo_name_in_your_local_desktop/chart_name> --set <OVERRIDE-VALUE-FROM-values.yaml>
 $ helm upgrade myapp1 stacksimplify/mychart1 --set "image.tag=2.0.0"
 
 # Additional List commands
 helm list --superseded
 helm list --deployed
+
+$ helm upgrade myapp1 stacksimplify/mychart1 --set "image.tag=3.0.0"
+
+$ helm upgrade myapp1 stacksimplify/mychart1 --set "image.tag=4.0.0"
+
+
+# Helm replica Upgrade
+$ helm upgrade myapp1 stacksimplify/mychart1 --set "replicaCount=4"
+
+# helm history
+//helm history RELEASE_NAME
+$ helm history myapp1
+
+
+# helm status
+$ helm status myapp1
+$ helm status myapp1 --show-desc
+$ helm status myapp1 --show-resources
+$ helm status myapp1 --revision 2
+
+# helm uninstall
+$ helm uninstall myapp1
 
 
 ```
