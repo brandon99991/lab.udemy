@@ -52,6 +52,7 @@ $ helm install mynginx mybitnami/nginx
 
 # Helm Chart 배포 목록
 $ helm list
+$ helm ls
 $ helm list --output=yaml
 $ helm list --output=json
 $ helm list -o json
@@ -62,9 +63,8 @@ $ helm list -n dev
 $ helm list -n default
 
 
-
-
-helm uninstall
+# Helm Chart 배포 삭제 / k8s에서 리소스 삭제됨.
+$ helm uninstall mynginx
 
 
 ```
