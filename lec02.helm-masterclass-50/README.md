@@ -1,8 +1,15 @@
 ● Lecture02. Helm Masterclass: 50 Practical Demos for Kubernetes DevOps
 
 https://github.com/stacksimplify/helm-masterclass
+https://github.com/stacksimplify/helm-charts
+
+# Helm Repository on github
+https://stacksimplify.github.io/helm-charts/
+
+
 
 ---------------------
+
 1. Helm 설치
 설치 안내 : https://helm.sh/docs/intro/install/
 
@@ -62,9 +69,35 @@ $ helm list --namespace=default
 $ helm list -n dev
 $ helm list -n default
 
-
 # Helm Chart 배포 삭제 / k8s에서 리소스 삭제됨.
 $ helm uninstall mynginx
+
+
+---------------------------------------
+
+# Add Helm Repository
+$ helm repo add stacksimplify https://stacksimplify.github.io/helm-charts/
+
+# Search Helm Repository
+$ helm search repo mychart1
+$ helm search repo mychart1 --versions
+$ helm search repo mychart2 --versions
+
+# Install myapp1 Helm Chart
+$ helm install myapp1 stacksimplify/mychart1 
+
+
+# Review the Docker Image Versions we are using
+https://github.com/users/stacksimplify/packages/container/package/kubenginx
+Image Tags: 1.0.0, 2.0.0, 3.0.0, 4.0.0
+
+# Helm Upgrade
+// helm upgrade <RELEASE-NAME> <repo_name_in_your_local_desktop/chart_name> --set <OVERRIDE-VALUE-FROM-values.yaml>
+$ helm upgrade myapp1 stacksimplify/mychart1 --set "image.tag=2.0.0"
+
+# Additional List commands
+helm list --superseded
+helm list --deployed
 
 
 ```
