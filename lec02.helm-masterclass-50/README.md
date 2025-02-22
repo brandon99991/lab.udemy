@@ -50,8 +50,18 @@ $ helm repo update
 // helm install <RELEASE-NAME> <repo_name_in_your_local_desktop/chart_name>
 $ helm install mynginx mybitnami/nginx
 
+# Helm Chart 배포 목록
+$ helm list
+$ helm list --output=yaml
+$ helm list --output=json
+$ helm list -o json
+$ helm list -o yaml
+$ helm list --namespace=dev
+$ helm list --namespace=default
+$ helm list -n dev
+$ helm list -n default
 
-helm list
+
 
 
 helm uninstall
