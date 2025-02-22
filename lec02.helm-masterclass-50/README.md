@@ -1,14 +1,13 @@
 ● Lecture02. Helm Masterclass: 50 Practical Demos for Kubernetes DevOps
 
-https://github.com/stacksimplify/helm-masterclass
-https://github.com/stacksimplify/helm-charts
+https://github.com/stacksimplify/helm-masterclass  
+
+https://github.com/stacksimplify/helm-charts  
 
 # Helm Repository on github
 https://stacksimplify.github.io/helm-charts/
 
 
-
----------------------
 
 1. Helm 설치
 설치 안내 : https://helm.sh/docs/intro/install/
