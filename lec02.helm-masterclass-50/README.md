@@ -125,5 +125,82 @@ $ helm status myapp1 --revision 2
 # helm uninstall
 $ helm uninstall myapp1
 
+-----------------------------------------
+
+# Search Helm Repo
+$ helm search repo mychart2
+
+# Search Helm Repo with --versions
+$ helm search repo mychart2 --versions
+
+# Search Helm Repo with --version
+//helm search repo mychart2 --version "CHART-VERSIONS"
+$ helm search repo mychart2 --version "0.2.0"
+
+# Install Helm Chart by specifying Chart Version
+//helm install myapp101 stacksimplify/mychart2 --version "CHART-VERSION"
+$ helm install myapp101 stacksimplify/mychart2 --version "0.1.0"
+
+# List Kubernetes Resources Deployed as part of this Helm Release
+$ helm status myapp101 --show-resources
+
+# Helm Upgrade using Chart Version
+$ helm upgrade myapp101 stacksimplify/mychart2 --version "0.2.0"
+
+# List Kubernetes Resources Deployed as part of this Helm Release
+$ helm status myapp101 --show-resources
+
+# List Release History
+$ helm history myapp101
+
+# Helm Upgrade using Chart Version
+$ helm upgrade myapp101 stacksimplify/mychart2
+
+# List Kubernetes Resources Deployed as part of this Helm Release
+$ helm status myapp101 --show-resources
+
+# List Release History
+$ helm history myapp101
+
+# Rollback to previous version
+$ helm rollback myapp101
+
+# List Kubernetes Resources Deployed as part of this Helm Release
+$ helm status myapp101 --show-resources
+
+# List Release History
+$ helm history myapp101
+
+# Rollback to previous version
+//helm rollback RELEASE-NAME REVISION
+$ helm rollback myapp101 1
+
+# List Kubernetes Resources Deployed as part of this Helm Release
+$ helm status myapp101 --show-resources
+
+# List Release History
+$ helm history myapp101
+
+# List Helm Releases
+$ helm list
+$ helm list --superseded
+$ helm list --deployed
+
+# Uninstall Helm Release with --keep-history Flag
+// helm uninstall <RELEASE-NAME> --keep-history
+$ helm uninstall myapp101 --keep-history
+
+# List Helm Releases which are uninstalled
+$ helm list --uninstalled
+
+# helm status command
+$ helm status myapp101
+
+# Rollback Helm Uninstalled Release
+//helm rollback <RELEASE> [REVISION] [flags]
+$ helm rollback myapp101 3
+
+
+
 
 ```
