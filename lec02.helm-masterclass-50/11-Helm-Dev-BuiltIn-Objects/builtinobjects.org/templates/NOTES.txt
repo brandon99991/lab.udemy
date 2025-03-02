@@ -9,7 +9,7 @@ Release IsInstall: {{ .Release.IsInstall }}
 Release Revision: {{ .Release.Revision }}
 Release Service: {{ .Release.Service }}
 
-{{/* Chart Objet */}}
+{{/* Chart Object */}}
 Chart Name: {{ .Chart.Name }}
 Chart Version: {{ .Chart.Version }}
 Chart AppVersion: {{ .Chart.AppVersion }}
@@ -36,6 +36,6 @@ Template Base Path: {{ .Template.BasePath }}
 File Get: {{ .Files.Get "myconfig1.toml" }}
 File Glob as Config: {{ (.Files.Glob "config-files/*").AsConfig }}
 File Glob as Secret: {{ (.Files.Glob "config-files/*").AsSecrets }}
-File Lines: {{ .Files.Lines "myconfig1.toml" }}
-File Lines: {{ .Files.Lines "config-files/myconfig2.toml" }}
+File Lines1: {{ .Files.Lines "myconfig1.toml" }}
+File Lines2: {{ .Files.Lines "config-files/myconfig2.toml" }}
 File Glob: {{ .Files.Glob "config-files/*" }}

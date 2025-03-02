@@ -200,7 +200,35 @@ $ helm status myapp101
 //helm rollback <RELEASE> [REVISION] [flags]
 $ helm rollback myapp101 3
 
+---------------------------------------------------
 
+# Install helm with --generate-name flag
+//helm install <repo_name_in_your_local_desktop/chart_name> --generate-name
+$ helm install stacksimplify/mychart1 --generate-name
+
+# List Helm Releases
+$ helm list
+$ helm list --output=yaml
+
+# Helm Status
+$ helm status mychart1-1689683948 
+$ helm status mychart1-1689683948 --show-resources
+
+# Helm atomic
+$ helm install dev101 stacksimplify/mychart1
+$ helm install qa101 stacksimplify/mychart1 --atomic
+
+# Install Helm Release by creating Kubernetes Namespace
+// --create-namespace는 namespace가 없을 경우에 생성하는 옵션임.
+$ helm install dev101 stacksimplify/mychart2 --version "0.1.0" --namespace dev --create-namespace 
+
+# List Helm Release
+$ helm list -n dev
+$ helm list --namespace dev
+
+# Helm Status
+$ helm status dev101 --show-resources -n dev
+$ helm status dev101 --show-resources --namespace dev
 
 
 ```
