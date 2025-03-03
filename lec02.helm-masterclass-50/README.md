@@ -1,3 +1,10 @@
+
+
+● 현재 진행 사항  
+  12-Helm-Dev-Basics  (완료)
+
+
+
 ● Lecture02. Helm Masterclass: 50 Practical Demos for Kubernetes DevOps
 
 https://github.com/stacksimplify/helm-masterclass  
