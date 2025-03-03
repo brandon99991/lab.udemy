@@ -1,7 +1,7 @@
 
 
 ● 현재 진행 사항  
-  12-Helm-Dev-Basics  (완료)
+  12-Helm-Dev-Basics  (완료 / 2025.03.03)
 
 
 
